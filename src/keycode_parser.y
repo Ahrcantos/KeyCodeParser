@@ -33,18 +33,9 @@
 %token <string> STRING
 %token <string> KEYCODE
 %token NUMBER
-%token SPEED
 %token SHELL
 %token REPEAT
 %token INCLUDE
-%token WRITE_PREFIX
-%token EXEC_PREFIX
-%token CMD_PREFIX
-%token LINE_PREFIX
-%token WRITE_SUFFIX
-%token EXEC_SUFFIX
-%token CMD_SUFFIX
-%token LINE_SUFFIX
 %type <expression> expression
 
 %union
@@ -60,7 +51,6 @@
 input:
 		%empty
 |		input action
-|		input asign
 |		input call
 ;
 
@@ -73,16 +63,6 @@ action:
 |			CMD expression
 |			LINE expression
 ;
-
-asign:
-		 WRITE_PREFIX '=' expression
-|		 EXEC_PREFIX '=' expression
-|		 CMD_PREFIX '=' expression
-|		 LINE_PREFIX '=' expression
-|		 WRITE_SUFFIX '=' expression
-|		 EXEC_SUFFIX '=' expression
-|		 CMD_SUFFIX '=' expression
-|		 LINE_SUFFIX '=' expression
 
 expression:
 					STRING

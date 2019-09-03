@@ -104,18 +104,10 @@ WRITE							{return WRITE;}
 EXEC							{return EXEC;}
 CMD								{return CMD;}
 LINE							{return LINE;}
-SPEED 						{return SPEED;}
 SHELL 						{return SHELL;}
 REPEAT 						{return REPEAT;}
 INCLUDE 					{return INCLUDE;}
-WRITE_PREFIX			{return WRITE_PREFIX;}
-EXEC_PREFIX				{return EXEC_PREFIX;}
-CMD_PREFIX				{return CMD_PREFIX;}
-LINE_PREFIX				{return LINE_PREFIX;}
-WRITE_SUFFIX			{return WRITE_SUFFIX;}
-EXEC_SUFFIX				{return EXEC_SUFFIX;}
-CMD_SUFFIX				{return CMD_SUFFIX;}
-LINE_SUFFIX				{return LINE_SUFFIX;}
+
 
 {IDENTIFIER} {
 	clear_buffer(string_content);
