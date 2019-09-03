@@ -18,6 +18,22 @@ var_init(char* name)
 	return var;
 }
 
+variable_t*
+var_asign_num(variable_t* var, long num)
+{
+	var->type = VAR_NUM;
+	var->value.expr = NULL;
+	var->value.number = num;
+}
+
+variable_t*
+var_asign_expr(variable_t* var, expression_t* expr)
+{
+	var->type = VAR_EXPR;
+	var->value.number = 0;
+	var->value.expr = expr;
+}
+
 void
 var_free(variable_t* var)
 {

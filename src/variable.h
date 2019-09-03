@@ -29,6 +29,9 @@ typedef struct variable_t
 variable_t*
 var_init(char* name);
 
+
+//Set the type of the variable to that
+//of a number and asigns a value
 variable_t*
 var_asign_num(variable_t* var, long num);
 
