@@ -64,4 +64,7 @@ copy_expression(expression_t* org);
 expression_node_t*
 copy_expression_node(expression_node_t* org);
 
+//Used when an expression is no longer needed
+//to free up memory
+
 #endif

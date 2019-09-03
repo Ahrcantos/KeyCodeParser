@@ -147,3 +147,21 @@ copy_expression_node(expression_node_t* org)
 	return copy_node;
 }
 
+void
+expression_free(expression_t* expr)
+{
+	if(expr->head == NULL)
+		return;
+
+	expression_node_t *next = NULL, *tmp = expr->head;	
+
+	while(tmp->next != NULL)
+	{
+		next = tmp->next;
+		free(tmp->value);
+		free(tmp);
+		tmp = next;
+	}
+
+	free(expr);
+}

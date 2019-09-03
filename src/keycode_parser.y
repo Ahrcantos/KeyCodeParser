@@ -58,6 +58,7 @@ action:
 			WRITE expression
 {
 	exec_expression($2);
+	expression_free($2);
 }
 |			EXEC expression
 |			CMD expression
